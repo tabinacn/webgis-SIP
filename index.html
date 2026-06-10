@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>WebGIS Jumlah Penduduk Surabaya</title>
+
+  <!-- MapLibre GL JS: library utama untuk menampilkan peta web -->
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet" />
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+
+  <!-- CSS buatan sendiri -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- Header aplikasi -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">W</div>
+      <div>
+        <h1>WebGIS</h1>
+        <p>Peta Penduduk Surabaya</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Layout utama: sidebar + peta -->
+  <main class="app-layout">
+    <aside class="sidebar">
+      <section class="panel">
+        <h2>Kontrol Peta</h2>
+        <p class="helper-text">
+          Gunakan panel ini untuk memfilter wilayah berdasarkan kecamatan.
+        </p>
+
+        <label for="kecamatanSelect">Filter Kecamatan</label>
+        <select id="kecamatanSelect">
+          <option value="all">Semua Kecamatan</option>
+        </select>
+
+        <button id="resetFilterBtn">Reset Filter</button>
+      </section>
+
+      <section class="panel">
+        <h2>Legenda</h2>
+        <div class="legend-item"><span style="background:#fff7bc"></span> Rendah</div>
+        <div class="legend-item"><span style="background:#fec44f"></span> Sedang</div>
+        <div class="legend-item"><span style="background:#d95f0e"></span> Tinggi</div>
+        <div class="legend-item"><span style="background:#7f2704"></span> Sangat Tinggi</div>
+      </section>
+    </aside>
+
+    <section class="map-container">
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <!-- JavaScript aplikasi -->
+  <script src="./js/app.js"></script>
+</body>
+</html>
